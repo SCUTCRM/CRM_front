@@ -7,6 +7,7 @@
     <div class="Login_box">
       <img src="../assets/login.gif" alt="" class="logo ">
       <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px">
+          <!-- form content here --->
       <el-form-item prop="account" class="input-list top_1">
         <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="账号"></el-input>
       </el-form-item>
@@ -74,7 +75,7 @@
                 if (this.$route.query.redirect) {
                   this.$router.push({ path: this.$route.query.redirect });
                 } else {
-                  this.$router.push({ path: '/Welcome' });
+                  this.$router.push({ path: '/System/Home' });
                 }
               }
             });
@@ -83,14 +84,14 @@
             return false;
           }
         });
-      }
-    },
-    registe:function(){
+      },
+	  registe:function(){
       if(this.$route.query.redirect){
           this.$router.push({path:this.$route.query.redirect});
       }  else{
           this.$router.push({path:'/Register'});
       }
+    }
     },
     mounted() {
 		var canvas = document.querySelector('canvas'),
