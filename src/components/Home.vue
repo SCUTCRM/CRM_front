@@ -1,11 +1,25 @@
 <template lang="html">
     <div id="home">
-                <el-row style="padding-bottom: 5%">
-                    <el-col span="12">
-                        <el-card class="box-card" style="width: 90%;">
-                            <div slot="header" class="clearfix">
-                                <span>历史纪录</span>
-                                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <el-row>
+            <el-col span="3"><p style="font-weight: bold;font-size: 20px">Home</p></el-col>
+            <el-col span="12" style="position:relative;left: 60%; top: 20px;"><button class="btn addButton dropdown-toggle" data-toggle="dropdown">
+                <strong>Add Widget</strong>
+                <i class="caret"></i>
+            </button></el-col>
+        </el-row>
+        <el-row style="padding-bottom: 5%">
+            <el-col span="12">
+                <el-card class="box-card" style="width: 90%;">
+                    <div slot="header" class="clearfix">
+                        <span>历史纪录</span>
+                        <select class="widgetFilter" id="historyType" name="type"
+                                style="width:100px;margin-bottom:0px;position: relative;left: 5%">
+                            <option value="all">All</option>
+                            <option value="comments">Comments</option>
+                            <option value="updates">Updates</option>
+                        </select>
+                        <el-button style="float: right; padding: 3px" round icon="el-icon-close"></el-button>
+                        <el-button style="float: right; padding: 3px" round icon="el-icon-refresh"></el-button>
                             </div>
                             <div v-for="o in 4" :key="o" class="text item">
                                 {{'记录' + o }}
@@ -16,7 +30,21 @@
                         <el-card class="box-card" style="width: 90%;">
                             <div slot="header" class="clearfix">
                                 <span>销售记录</span>
-                                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                                <select class="widgetFilter" id="owner" name="owner" style="width:70px;margin-bottom:0px;position: relative;left: 5%">
+                                    <option value="1">Mine</option>
+                                    <option value="all">All</option>
+                                    <optgroup label="Users">
+                                        <option value="6">Debra Snowden</option>
+                                        <option value="5">Michael Young</option>
+                                    </optgroup>
+                                    <optgroup label="Groups">
+                                        <option value="3">Marketing Group</option>
+                                        <option value="4">Support Group</option>
+                                        <option value="2">Team Selling</option>
+                                    </optgroup>
+                                </select>
+                                <el-button style="float: right; padding: 3px" round icon="el-icon-close"></el-button>
+                                <el-button style="float: right; padding: 3px" round icon="el-icon-refresh"></el-button>
                             </div>
                             <div v-for="o in 4" :key="o" class="text item">
                                 {{'记录' + o }}
@@ -29,7 +57,8 @@
                         <el-card class="box-card" style="width: 90%;">
                             <div slot="header" class="clearfix">
                                 <span>主要事件</span>
-                                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                                <el-button style="float: right; padding: 3px" round icon="el-icon-close"></el-button>
+                                <el-button style="float: right; padding: 3px" round icon="el-icon-refresh"></el-button>
                             </div>
                             <div v-for="o in 4" :key="o" class="text item">
                                 {{'事件' + o }}
