@@ -7,6 +7,7 @@ import System from '@/components/System'
 import Register from '@/components/Register'
 import Loginbeta from '@/components/Loginbeta2'
 import Organization from '@/components/Organization'
+import Organization_table from '@/components/Organization_table'
 
 Vue.use(Router)
 
@@ -48,7 +49,14 @@ export default new Router({
         {
             path:'/System/Organization',
             name:'Organization',
-            component:Organization
+            component:Organization,
+            children: [
+                {
+                    path:'/System/OrganizationTable',
+                    name:'Organization_table',
+                    component:Organization_table
+                }
+            ]
         }
     ]
 })
