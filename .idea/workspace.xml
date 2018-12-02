@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afb87248-dae5-4be7-b3ac-e02310e7014a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Loginbeta2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Organization.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/CRM-Large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/Login-background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/System.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/System.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,6 +72,7 @@
         <counts>
           <entry key="js" value="1252" />
           <entry key="json" value="8" />
+          <entry key="txt" value="8" />
           <entry key="vue" value="7560" />
         </counts>
       </usages-collector>
@@ -86,6 +80,7 @@
         <counts>
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="1252" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="Vue.js" value="7560" />
         </counts>
       </usages-collector>
@@ -138,8 +133,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Organization.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="800">
+              <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -273,7 +268,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -381,18 +376,26 @@
       <workItem from="1543303763847" duration="28000" />
       <workItem from="1543578636318" duration="2927000" />
       <workItem from="1543581627763" duration="4348000" />
-      <workItem from="1543750509640" duration="6859000" />
+      <workItem from="1543750509640" duration="7127000" />
     </task>
+    <task id="LOCAL-00001" summary="首页组织页面更新">
+      <created>1543757628192</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543757628192</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82218000" />
+    <option name="totallyTimeSpent" value="82486000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.258547" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12750264" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -417,6 +420,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="首页组织页面更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="首页组织页面更新" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Count.vue" />
@@ -680,8 +687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Organization.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="800">
+          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
         </state>
       </provider>
     </entry>
