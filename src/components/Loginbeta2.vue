@@ -10,23 +10,23 @@
                 <p style="font-size: 30px;font-weight: bold">了解更多关于CRM</p>
                 <el-row>
                     <el-col span="10">
-                        <el-carousel style="line-height: 100px">
-                            <el-carousel-item>
-                                <img src="../img/Login-background.jpg" height="300px" width="960px">
+                        <el-carousel  :line-height="bannerH+'px'">
+                            <el-carousel-item v-for="(item,index) in imgList" :key="index">
+                                <img src="'../img/' + item">
                             </el-carousel-item>
                         </el-carousel>
                     </el-col>
                     <el-col span="8" style="position:relative;left: 20%">
                         <div class="Login_box" style="width: 80%">
-                            <el-form label-position="left" label-width="70px" style="position:relative;left: 10%;width:80%;height: 80%; top: 25%;font-weight: bold">
-                                <el-form-item label="用户名">
-                                    <el-input></el-input>
+                            <el-form ref="userLoginForm"  :model="Login_box" :rules="rules"    label-position="left" label-width="70px" style="position:relative;left: 10%;width:80%;height: 80%; top: 25%;font-weight: bold">
+                                <el-form-item label="用户名" prop="name">
+                                    <el-input v-model="Login_box.name" id="user_login_name" auto-complete="off"></el-input>
                                 </el-form-item>
-                                <el-form-item label="密码">
-                                    <el-input></el-input>
+                                <el-form-item label="密码" prop="password">
+                                    <el-input v-model="Login_box.password" type="password" id="user_login_password" auto-complete="off"></el-input>
                                 </el-form-item>
                                 <el-form inline="true">
-                                    <el-button type="normal" style="position: relative;left: 20%">登录</el-button>
+                                    <el-button type="normal" round @click="loginByUser()" style="position: relative;left: 20%">登录</el-button>
                                     <a href="Register.vue" style="position: relative;left: 65%">忘记密码？</a>
                                 </el-form>
                             </el-form>
@@ -48,9 +48,69 @@
 
 <script>
     export default {
-        name: "Lohinbeta2",
+        name: "Loginbeta2",
         data() {
-            return {}
+            return {
+                bannerH:200,
+                imgList:['003.jpg','CRM.png','email.png','home.png'],
+                Login_box:{
+                    name:'',
+                    password:''
+                },
+                rules:{
+                    name:[{required:true,message:'用户名不能为空',trigger:'blur'}],
+                    password:[{required:true,message:'密码不能为空',trigger:'blur'}],
+                }
+            }
+        },
+        methods:{
+            loginByUser: function(){
+                var that=this;
+                this.$refs['userLoginForm'].validate(valid=>{
+                    //表单验证成功
+                    if(valid){
+                        var name=document.getElementById('user_login_name').value;
+                        var password=document.getElementById('user_login_password').value;
+
+                        let postData=this.$qs.stringify({
+                            name:name,
+                            password:password
+                        });
+
+                        this.$ajax({
+                            method:'post',
+                            url:'user/login.do',
+                            data: postData
+                        }).then(function(reponse){
+                            if(reponse.data.success){
+                                //跳转
+                                var sessionStorage= window.sessionStorage;
+                                sessionStorage.setItem("username",reponse.data.name);
+                                sessionStorage.setItem("userId",reponse.data.userId);
+                                that.$router.push({
+                                    path:'/home',
+                                });
+                            }else{
+                                that.$msgbox({
+                                    title:'登录失败',
+                                    message:reponse.data.msg,
+                                    type:'error'
+                                });
+                            }
+                        })
+                    }
+                })
+            },
+            setBannerH:function(){
+                this.bannerH=document.body.clientWidth/4;
+            }
+
+        },
+        mounted(){
+            this.setBannerH()
+            window.addEventListener('resize', () => {
+                   this.setBannerH()
+                   }, false)
         }
     }
 </script>
