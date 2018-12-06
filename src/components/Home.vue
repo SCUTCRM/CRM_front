@@ -12,12 +12,11 @@
                 <el-card class="box-card" style="width: 90%;">
                     <div slot="header" class="clearfix">
                         <span>历史纪录</span>
-                        <select class="widgetFilter" id="historyType" name="type"
-                                style="width:100px;margin-bottom:0px;position: relative;left: 5%">
-                            <option value="all">All</option>
-                            <option value="comments">Comments</option>
-                            <option value="updates">Updates</option>
-                        </select>
+                        <el-select placeholder="请选择" class="select">
+                            <el-option value="0">所有记录</el-option>
+                            <el-option value="1">评论</el-option>
+                            <el-option value="2">更新</el-option>
+                        </el-select>
                         <el-button style="float: right; padding: 3px" round icon="el-icon-close"></el-button>
                         <el-button style="float: right; padding: 3px" round icon="el-icon-refresh"></el-button>
                             </div>
@@ -30,19 +29,19 @@
                         <el-card class="box-card" style="width: 90%;">
                             <div slot="header" class="clearfix">
                                 <span>销售记录</span>
-                                <select class="widgetFilter" id="owner" name="owner" style="width:70px;margin-bottom:0px;position: relative;left: 5%">
-                                    <option value="1">Mine</option>
-                                    <option value="all">All</option>
-                                    <optgroup label="Users">
-                                        <option value="6">Debra Snowden</option>
-                                        <option value="5">Michael Young</option>
-                                    </optgroup>
-                                    <optgroup label="Groups">
-                                        <option value="3">Marketing Group</option>
-                                        <option value="4">Support Group</option>
-                                        <option value="2">Team Selling</option>
-                                    </optgroup>
-                                </select>
+                                <el-select placeholder="请选择" class="select">
+                                    <el-option value="mine">我的</el-option>
+                                    <el-option value="all">所有的</el-option>
+                                    <el-option-group label="用户">
+                                        <el-option value="0">bolixinyu</el-option>
+                                        <el-option value="1">shaohui</el-option>
+                                    </el-option-group>
+                                    <el-option-group label="部门">
+                                        <el-option value="2">市场部</el-option>
+                                        <el-option value="3">支持部</el-option>
+                                        <el-option value="4">团队销售</el-option>
+                                    </el-option-group>
+                                </el-select>
                                 <el-button style="float: right; padding: 3px" round icon="el-icon-close"></el-button>
                                 <el-button style="float: right; padding: 3px" round icon="el-icon-refresh"></el-button>
                             </div>
@@ -167,36 +166,24 @@ export default {
   }
   .nav_list{
     position: absolute;
-    right: 0;
-  }
-  .nav_list li{
-    height: 16px;
-    line-height: 16px;
-    float: left;
-    margin-top: 10px;
-    border-right: 1px solid #000;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .list_top_btn{
-    float: left;
-    margin-top: -8px;
-  }
-  .nav_list {
-    display: block;
-    text-decoration: none;
-    color:#000;
-    font-size: 14px;
-  }
-  .show_box{
-    width: 100%;
-    height: calc(100% - 62px);
-    position: absolute;
-    top: 62px;
-  }
-  .w24{
-    width: 24px;
+      right: 0;
   }
 
+  .nav_list li {
+      height: 16px;
+      line-height: 16px;
+      float: left;
+      margin-top: 10px;
+      border-right: 1px solid #000;
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+
+  .select {
+      position: relative;
+      height: 50px;
+      width: 100px;
+      left:25%;
+  }
 
 </style>

@@ -52,7 +52,7 @@ export default new Router({
             component:Organization,
             children: [
                 {
-                    path:'/System/OrganizationTable',
+                    path:'/System/Organization/OrganizationTable',
                     name:'Organization_table',
                     component:Organization_table
                 }

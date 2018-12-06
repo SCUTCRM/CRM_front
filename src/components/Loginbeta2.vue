@@ -12,7 +12,7 @@
                     <el-col span="10">
                         <el-carousel  :line-height="bannerH+'px'">
                             <el-carousel-item v-for="(item,index) in imgList" :key="index">
-                                <img src="'../img/' + item">
+                                <img src= item>
                             </el-carousel-item>
                         </el-carousel>
                     </el-col>
@@ -27,9 +27,23 @@
                                 </el-form-item>
                                 <el-form inline="true">
                                     <el-button type="normal" round @click="loginByUser()" style="position: relative;left: 20%">登录</el-button>
-                                    <a href="Register.vue" style="position: relative;left: 65%">忘记密码？</a>
+                                    <a href="Register.vue" style="position: relative;left: 65%;right: 35%;">忘记密码？</a>
                                 </el-form>
                             </el-form>
+                            <!-------------------------------
+                            <el-form ref="userLoginForm"  :model="Login_box" :rules="rules"    label-position="left" label-width="70px" class="forget-word-box">
+                                <el-form-item label="用户名" prop="name">
+                                    <el-input auto-complete="off"></el-input>
+                                </el-form-item>
+                                <el-form-item label="邮箱" prop="password">
+                                    <el-input auto-complete="off"></el-input>
+                                </el-form-item>
+                                <el-form inline="true">
+                                    <el-button type="normal" round style="position: relative;left: 20%">确认</el-button>
+                                    <a href="Register.vue" style="position: relative;left: 65%">返回</a>
+                                </el-form>
+                            </el-form>
+                            -------------->
                         </div>
                     </el-col>
                 </el-row>
@@ -52,7 +66,7 @@
         data() {
             return {
                 bannerH:200,
-                imgList:['003.jpg','CRM.png','email.png','home.png'],
+                imgList:['../img/003.jpg','../img/CRM.png','../img/email.png','../img/home.png'],
                 Login_box:{
                     name:'',
                     password:''
