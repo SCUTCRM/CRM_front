@@ -43,7 +43,7 @@
                     <!------登录登出------>
                     <el-dropdown style="position: relative;left:20%;bottom: 10px">
                         <el-button>
-                            <i style="font-style: normal;" v-model="username"></i><i class="el-icon-arrow-down el-icon--right"></i>
+                            <i style="font-style: normal;" ></i><i class="el-icon-arrow-down el-icon--right"></i>
                         </el-button>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>偏好设置</el-dropdown-item>
@@ -56,12 +56,12 @@
                 <el-col span="1"><img src="../img/CRM.png"/></el-col>
                 <el-col span="2"><h1>首页</h1></el-col>
                 <el-col span="12" style="position: relative;left:20%">
-                    <el-select style="position: relative;top:10px;width: 150px; font-weight: bold" @select="handl_select">
+                    <el-select v-model="condition" style="position: relative;top:10px;width: 150px; font-weight: bold" >
                         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
-                                   v-model="searchOptions"></el-option>
+                                   ></el-option>
                     </el-select>
                     <el-input v-model="input" placeholder="请输入内容" style="width: 300px;position: relative;top: 10px;"></el-input>
-                    <el-button icon="el-icon-search" circle style="position: relative;top:10px" type="primary"></el-button>
+                    <el-button @click="handSelect" icon="el-icon-search" circle style="position: relative;top:10px" type="primary"></el-button>
                 </el-col>
             </el-row>
         </el-container>
@@ -77,6 +77,7 @@
     export default {
         data(){
             return{
+                condition:'所有记录',
                 options:[{
                     value:'default',
                     label:'所有记录'
@@ -112,6 +113,8 @@
                     label:'活动'
                 }]
             }
+        },
+        methods:{
         }
     }
 </script>

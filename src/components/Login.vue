@@ -21,7 +21,7 @@
       <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
       </el-form-item>
       <el-form-item style="width: 50%">
-        <el-button type="primary" class="input-list top_5" @click.native.prevent="registe":loading="registerAction">注册</el-button>
+        <el-button type="primary" class="input-list top_5" @click.native.prevent="registe" :loading="registerAction">注册</el-button>
       </el-form-item>
       </el-form>
 
