@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
-import Login_beta1 from '@/components/Login_beta1'
-import Home from '@/components/Home'
-import System from '@/components/System'
+import Home from '@/components/common/Home'
+import System from '@/components/System/System'
 import Register from '@/components/Register'
-import Loginbeta from '@/components/Loginbeta2'
-import Organization from '@/components/Organization'
-import Organization_table from '@/components/Organization_table'
+import Organization from '@/components/System/Organization'
+import Organization_table from '@/components/System/Organization_table'
 
 Vue.use(Router)
 
@@ -17,17 +15,6 @@ export default new Router({
             path: '/',
             name: 'Login',
             component: Login
-        },
-        {
-            path: '/Login_beta1',
-            name: 'Login_beta1',
-            component: Login_beta1
-        },
-        {
-
-            path: '/Loginbeta',
-            name: 'Loginbeta',
-            component: Loginbeta
         },
         {
             path: '/System',
