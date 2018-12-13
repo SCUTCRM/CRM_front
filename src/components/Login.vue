@@ -17,7 +17,7 @@
                         </el-carousel>
                     </el-col>
                     <el-col span="8" style="position:relative;left: 20%">
-                        <div class="Login_box" style="width: 80%">
+                        <div class="Login_box" style="width: 80%" v-if="login_show">
                             <el-form ref="userLoginForm"  :model="Login_box" :rules="rules"    label-position="left" label-width="70px" class="login_box_form">
                                 <el-form-item label="用户名" prop="name">
                                     <el-input v-model="Login_box.name" id="user_login_name" auto-complete="off"></el-input>
@@ -26,24 +26,10 @@
                                     <el-input v-model="Login_box.password" type="password" id="user_login_password" auto-complete="off"></el-input>
                                 </el-form-item>
                                 <el-form inline="true">
-                                    <el-button type="normal" round @click="loginByUser()" style="position: relative;left: 20%">登录</el-button>
-                                    <a href="Register.vue" style="position: relative;left: 65%;right: 35%;">忘记密码？</a>
+                                    <el-button type="normal" round @click="loginByUser()" style="position: relative;left: 20%"> 登录 </el-button>
+                                    <el-button @click="is_show()" type="danger" round style="position: relative;left: 30%">忘记密码</el-button>
                                 </el-form>
                             </el-form>
-                            <!-------------------------------
-                            <el-form ref="userLoginForm"  :model="Login_box" :rules="rules"    label-position="left" label-width="70px" class="forget-word-box">
-                                <el-form-item label="用户名" prop="name">
-                                    <el-input auto-complete="off"></el-input>
-                                </el-form-item>
-                                <el-form-item label="邮箱" prop="password">
-                                    <el-input auto-complete="off"></el-input>
-                                </el-form-item>
-                                <el-form inline="true">
-                                    <el-button type="normal" round style="position: relative;left: 20%">确认</el-button>
-                                    <a href="Register.vue" style="position: relative;left: 65%">返回</a>
-                                </el-form>
-                            </el-form>
-                            -------------->
                         </div>
                     </el-col>
                 </el-row>
@@ -66,6 +52,8 @@
         data() {
             return {
                 bannerH:200,
+                login_show:true,
+                forget_show:false,
                 imgList:['../img/Login-ad/Viger.JPG','../img/Login-ad/viger2.JPG','../img/Login-ad/viger3.JPG','../img/Login-ad/viger4.JPG','../img/Login-ad/viger5.JPG'],
                 Login_box:{
                     name:'',
@@ -117,6 +105,11 @@
             },
             setBannerH:function(){
                 this.bannerH=document.body.clientWidth/4;
+            },
+
+            is_show: function(){
+                this.login_show=false;
+                this.forget_show=true;
             }
 
         },

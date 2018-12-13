@@ -19,7 +19,7 @@
                             <el-option value="1">评论</el-option>
                             <el-option value="2">更新</el-option>
                         </el-select>
-                        <el-button class="card_btn" @click="is_show()" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" @click="is_show(history_show)" round icon="el-icon-close"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -75,12 +75,19 @@
     export default {
         data(){
             return{
-                history_show: true
+                history_show: true,
             }
         },
         methods:{
-            is_show: function(){
-                this.history_show=!this.history_show;
+            is_show: function(card_show){
+                // card_show=!card_show;
+                // alert(this.history_show);
+                $.ajax({
+                    async:false,
+                    success:function(){
+                        card_show=!card_show;
+                    }
+                })
             }
         }
     }
