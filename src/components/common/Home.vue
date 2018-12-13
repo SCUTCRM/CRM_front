@@ -11,7 +11,7 @@
         </el-row>
         <el-row style="padding-bottom: 5%">
             <el-col span="12">
-                <el-card class="box-card" style="width: 90%;">
+                <el-card class="box-card" style="width: 90%;" v-if="history_show">
                     <div slot="header" class="clearfix">
                         <span>历史纪录</span>
                         <el-select placeholder="请选择" class="select">
@@ -19,7 +19,7 @@
                             <el-option value="1">评论</el-option>
                             <el-option value="2">更新</el-option>
                         </el-select>
-                        <el-button class="card_btn" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" @click="is_show(history_show)" round icon="el-icon-close"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -72,7 +72,25 @@
 
 
 <script>
-    export default {}
+    export default {
+        data(){
+            return{
+                history_show: true,
+            }
+        },
+        methods:{
+            is_show: function(card_show){
+                // card_show=!card_show;
+                // alert(this.history_show);
+                $.ajax({
+                    async:false,
+                    success:function(){
+                        card_show=!card_show;
+                    }
+                })
+            }
+        }
+    }
 </script>
 
 <style lang="css">
