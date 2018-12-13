@@ -3,7 +3,7 @@
         <el-row>
             <el-col span="3"><p style="font-weight: bold;font-size: 20px">Home</p></el-col>
             <el-col span="12" class="add_wid">
-                <el-button type="normal" class="btn addButton dropdown-toggle" data-toggle="dropdown">
+                <el-button type="primary" class="btn addButton dropdown-toggle" data-toggle="dropdown">
                     <strong>Add Widget</strong>
                     <i class="caret"></i>
                 </el-button>
