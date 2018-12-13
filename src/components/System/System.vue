@@ -2,14 +2,13 @@
     <div class="System">
         <el-container>
             <el-header>
-                <!----------------------------------------导航栏菜单--------------------------------->
                 <el-menu :router="true" default-active="activeIndex" class="navMenu" mode="horizontal"
                          @select="selectOn"  style="font-size: 18px;font-weight: bold;">
                     <el-menu-item index="1" class="menu_item"><img src="../../img/System/home.png" width="30" height="30">首页</el-menu-item>
                     <el-menu-item index="2" class="menu_item"><img src="../../img/System/calendar.png"/>日历</el-menu-item>
                     <el-menu-item index="3" class="menu_item"><img src="../../img/System/leads.png"/>线索</el-menu-item>
-                    <el-menu-item index="4" class="menu_item"><img src="../../img/System/organizations.png"/>组织机构</el-menu-item>
-                    <el-menu-item index="5" class="menu_item"><img src="../../img/System/contacts.png"/>联系人</el-menu-item>
+                    <el-menu-item index="/System/Organization" class="menu_item"><img src="../../img/System/organizations.png"/>组织机构</el-menu-item>
+                    <el-menu-item index="/System/Prodcut" class="menu_item"><img src="../../img/System/contacts.png"/>联系人</el-menu-item>
                     <el-menu-item index="6" class="menu_item"><img src="../../img/System/products.png"/>产品</el-menu-item>
                     <el-menu-item index="7" class="menu_item"><img src="../../img/System/campaigns.png"/>活动</el-menu-item>
                     <el-menu-item index="8" class="menu_item"><img src="../../img/System/opportunities.png"/>机会</el-menu-item>

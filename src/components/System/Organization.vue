@@ -15,10 +15,18 @@
                             <i class="el-icon-document"></i>
                             <span slot="title">公告栏</span>
                         </el-menu-item>
-                        <el-menu-item index="4">
+                        <!-- <el-menu-item index="4">
                             <i class="el-icon-setting"></i>
                             <span slot="title">最近更改</span>
-                        </el-menu-item>
+                        </el-menu-item> -->
+                        <el-collapse accordion>
+                            
+                            <el-collapse-item>
+                                <template slot="title"><i class="header-icon el-icon-info"></i>近期记录</template>
+                                <div>record1</div>
+                                <div>record2</div>
+                            </el-collapse-item>
+                        </el-collapse>
                     </el-menu>
                 </el-col>
 
