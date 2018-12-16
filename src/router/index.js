@@ -37,13 +37,18 @@ export default new Router({
             path:'/System/Organization',
             name:'Organization',
             component:Organization,
-            children: [
+            /*children: [
                 {
-                    path:'/System/Organization/OrganizationTable',
+                    path:'/System/OrganizationTable',
                     name:'Organization_table',
                     component:Organization_table
                 }
-            ]
+            ]*/
+        },
+        {
+            path:'/System/OrganizationTable',
+            name:'Organization_table',
+            component:Organization_table
         }
     ]
 })
