@@ -1,5 +1,6 @@
 <template lang="html">
     <div id="home">
+        <System/>
         <el-row>
             <el-col span="3"><p style="font-weight: bold;font-size: 20px">Home</p></el-col>
             <el-col span="12" class="add_wid">
@@ -19,7 +20,7 @@
                             <el-option value="1">评论</el-option>
                             <el-option value="2">更新</el-option>
                         </el-select>
-                        <el-button class="card_btn" @click="is_show(history_show)" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" @click="isShow(history_show)" round icon="el-icon-close"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -72,22 +73,29 @@
 
 
 <script>
+import System from '../System/System.vue'
     export default {
+        components:{
+            System
+        },
         data(){
             return{
                 history_show: true,
+                market_show: true,
             }
         },
         methods:{
-            is_show: function(card_show){
-                // card_show=!card_show;
-                // alert(this.history_show);
-                $.ajax({
+            isShow: function(card_show){
+                console.log(card_show)
+                card_show=!card_show
+                console.log(card_show)
+                this.history_show = card_show;
+                /*$.ajax({
                     async:false,
                     success:function(){
                         card_show=!card_show;
                     }
-                })
+                })*/
             }
         }
     }

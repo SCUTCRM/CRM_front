@@ -67,6 +67,7 @@
         },
         methods:{
             loginByUser: function(){
+                console.log("123")
                 var that=this;
                 this.$refs['userLoginForm'].validate(valid=>{
                     //表单验证成功
@@ -78,10 +79,10 @@
                             name:name,
                             password:password
                         });
-
+                        console.log(postData)
                         this.$ajax({
                             method:'post',
-                            url:'user/login.do',
+                            url:'users/login.do',
                             data: postData
                         }).then(function(reponse){
                             if(reponse.data.success){
@@ -133,11 +134,11 @@
     .vtFooter {
         position: relative;
         display: block;
-        top: 249px;
+        top: 0;
         width: 100%;
         height: 100px;
         background-color: #fdfffd;
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .Login_box {

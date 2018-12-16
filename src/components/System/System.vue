@@ -22,7 +22,7 @@
                     </el-submenu>
 
                     <!--相关菜单-->
-                    <el-dropdown style="position: relative;left: 20%">
+                    <el-dropdown class="relative-menu">
                         <el-button circle><img src="../../img/System/info.png"/></el-button>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>文档说明</el-dropdown-item>
@@ -118,23 +118,24 @@
     }
 </script>
 
-<style>
+<style scoped>
     .System {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
+        min-width: 1250px;
+        height: 200px;
+        /*overflow: scroll;*/
     }
 
     .menu_item {
-        padding-right: 30px;
-        font-size: large;
+        padding-right: 15px;
+        font-size: 16px;
         color: black;
     }
 
     .logout_drop {
         position: relative;
-        left: 20%;
-        bottom: 10px
+        /*left: 20%;*/
+        /*bottom: 10px*/
+        float: left;
     }
 
     .search_input {
@@ -146,5 +147,8 @@
     .search_btn {
         position: relative;
         top: 10px
+    }
+    .relative-menu {
+        
     }
 </style>
