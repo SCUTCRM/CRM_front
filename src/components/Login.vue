@@ -54,7 +54,7 @@
                 bannerH:200,
                 login_show:true,
                 forget_show:false,
-                imgList:['../img/Login-ad/Viger.JPG','../img/Login-ad/viger2.JPG','../img/Login-ad/viger3.JPG','../img/Login-ad/viger4.JPG','../img/Login-ad/viger5.JPG'],
+                imgList:['../img/ad/Viger.JPG','../../img/System/home.png','../../../img/ad/viger2.JPG'],
                 Login_box:{
                     name:'',
                     password:''

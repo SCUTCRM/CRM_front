@@ -14,13 +14,13 @@
             <el-col span="12">
                 <el-card class="box-card" style="width: 90%;" v-if="history_show">
                     <div slot="header" class="clearfix">
-                        <span>历史纪录</span>
+                        <span>历史记录</span>
                         <el-select placeholder="请选择" class="select">
                             <el-option value="0">所有记录</el-option>
                             <el-option value="1">评论</el-option>
                             <el-option value="2">更新</el-option>
                         </el-select>
-                        <el-button class="card_btn" @click="isShow(history_show)" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" @click="historyShow()" round icon="el-icon-close"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -29,7 +29,7 @@
                 </el-card>
             </el-col>
             <el-col span="12">
-                <el-card class="box-card" style="width: 90%;">
+                <el-card class="box-card" style="width: 90%;" v-if="market_show">
                     <div slot="header" class="clearfix">
                         <span>销售记录</span>
                         <el-select placeholder="请选择" class="select">
@@ -45,7 +45,7 @@
                                 <el-option value="4">团队销售</el-option>
                             </el-option-group>
                         </el-select>
-                        <el-button class="card_btn" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" round icon="el-icon-close" @click="marketShow()"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -56,10 +56,10 @@
         </el-row>
         <el-row>
             <el-col span="12">
-                <el-card class="box-card" style="width: 90%;">
+                <el-card class="box-card" style="width: 90%;" v-if="main_show">
                     <div slot="header" class="clearfix">
                         <span>主要事件</span>
-                        <el-button class="card_btn" round icon="el-icon-close"></el-button>
+                        <el-button class="card_btn" round icon="el-icon-close" @cilck="mainShow()"></el-button>
                         <el-button class="card_btn" round icon="el-icon-refresh"></el-button>
                     </div>
                     <div v-for="o in 4" :key="o" class="text item">
@@ -82,20 +82,20 @@ import System from '../System/System.vue'
             return{
                 history_show: true,
                 market_show: true,
+                main_show:true
             }
         },
         methods:{
-            isShow: function(card_show){
-                console.log(card_show)
-                card_show=!card_show
-                console.log(card_show)
-                this.history_show = card_show;
-                /*$.ajax({
-                    async:false,
-                    success:function(){
-                        card_show=!card_show;
-                    }
-                })*/
+            historyShow: function(){
+                this.history_show=!this.history_show;
+            },
+
+            marketShow: function(){
+                this.market_show=!this.market_show;
+            },
+
+            mainShow: function(){
+                this.main_show=!this.main_show;
             }
         }
     }
