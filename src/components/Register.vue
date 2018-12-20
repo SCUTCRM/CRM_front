@@ -8,7 +8,7 @@
             <el-container style="width: 100%;background-color: rgba(76,72,72,0.53)">
                 <el-header height="10%"
                            style="width:100%;background-color: rgba(255,255,248,0.11);color: #000000;opacity: 20%">
-                    <h1 style="text-align: center;font-family: 'Bookman Old Style';font-size: 30px">欢迎注册CRM</h1>
+                    <h1 style="text-align: center;font-family: 'Bookman Old Style';font-size: 30px">欢迎使用CRM</h1>
                 </el-header>
                 <el-main>
                     <div class="inputs">
@@ -23,7 +23,7 @@
                             </el-col>
                         </el-row>
                         <el-row :gutter="20">
-                            <el-col :span="12" class="register pwd1">密码:
+                            <el-col :span="12" class="register pwd1">新密码:
                                 <el-input v-model="input" placeholder="请输入密码"></el-input>
                             </el-col>
                         </el-row>
@@ -34,7 +34,7 @@
                             </el-col>
                         </el-row>
                         <el-row :gutter="12">
-                            <el-button round class="register button">注册</el-button>
+                            <el-button round class="register button">确认</el-button>
                         </el-row>
                     </div>
                 </el-main>

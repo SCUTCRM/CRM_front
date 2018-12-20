@@ -17,6 +17,11 @@ export default new Router({
             component: Login
         },
         {
+            path:'/Register',
+            name:'Register',
+            component:Register
+        },
+        {
             path: '/System',
             name: 'System',
             component: System,
@@ -37,13 +42,13 @@ export default new Router({
             path:'/System/Organization',
             name:'Organization',
             component:Organization,
-            /*children: [
+            children: [
                 {
-                    path:'/System/OrganizationTable',
+                    path:'/System/Organization/OrganizationTable',
                     name:'Organization_table',
                     component:Organization_table
                 }
-            ]*/
+            ]
         },
         {
             path:'/System/OrganizationTable',
